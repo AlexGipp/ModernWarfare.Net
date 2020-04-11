@@ -7,6 +7,5 @@ namespace ModernWarfare.Net.Models
 {
     public class MultiplayerStats
     {
-
     }
 }
