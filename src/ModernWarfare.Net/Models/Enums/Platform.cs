@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ModernWarfare.Net.Models.Enums
 {
@@ -29,6 +30,20 @@ namespace ModernWarfare.Net.Models.Enums
                 default:
                     throw new NotSupportedException("Invalid platform type.");
             }
+        }
+
+        internal static string ValidateUsername(this Platform platform, string username)
+        {
+            if (platform == Platform.BattleNet)
+            {
+                if (!username.Contains("#") && !Regex.IsMatch(username, @"\d{4}$"))
+                    throw new NotSupportedException("Invalid username type.");
+
+                string newUsername = username.Replace("#", "%23");
+                return newUsername;
+            }
+
+            return username;
         }
     }
 }
