@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernWarfare.Net", "Modern
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernWarfare.Net.Tests", "ModernWarfare.Net.Tests\ModernWarfare.Net.Tests.csproj", "{B5BF44B4-8E8A-4BD7-AA9D-5CADD4D74C4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProgram", "TestProgram\TestProgram.csproj", "{AD635034-DC7B-4D74-8231-276EB661EE03}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{B5BF44B4-8E8A-4BD7-AA9D-5CADD4D74C4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5BF44B4-8E8A-4BD7-AA9D-5CADD4D74C4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5BF44B4-8E8A-4BD7-AA9D-5CADD4D74C4F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AD635034-DC7B-4D74-8231-276EB661EE03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD635034-DC7B-4D74-8231-276EB661EE03}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD635034-DC7B-4D74-8231-276EB661EE03}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD635034-DC7B-4D74-8231-276EB661EE03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

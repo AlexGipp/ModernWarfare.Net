@@ -11,16 +11,16 @@ namespace ModernWarfare.Net
 {
     public class ModernWarfareClient
     {
-        public async Task<MultiplayerStats> GetMultiplayerStats(Platform platform, string username)
+        public async Task<MultiplayerStats> GetMultiplayerStatsAsync(Platform platform, string username)
         {
-            string requestPlatform = PlatformFormatter.FormatPlatform(platform);
+            string requestPlatform = PlatformExtensions.ToApiString(platform);
             var jsonAsString = await ApiProcessor.GetUser($"https://api.tracker.gg/api/v2/modern-warfare/standard/profile/{requestPlatform}/{username}");
             return JsonConvert.DeserializeObject<MultiplayerStats>(jsonAsString);
         }
 
-        public async Task<WarzoneStats> GetWarzoneStats(Platform platform, string username)
+        public async Task<WarzoneStats> GetWarzoneStatsAsync(Platform platform, string username)
         {
-            string requestPlatform = PlatformFormatter.FormatPlatform(platform);
+            string requestPlatform = PlatformExtensions.ToApiString(platform);
             var jsonAsString = await ApiProcessor.GetUser($"https://api.tracker.gg/api/v2/warzone/standard/profile/{requestPlatform}/{username}");
             return JsonConvert.DeserializeObject<WarzoneStats>(jsonAsString);
         }
