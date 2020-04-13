@@ -5,7 +5,9 @@ using Newtonsoft.Json;
 
 namespace ModernWarfare.Net.Models
 {
-    public class MultiplayerStats
+    public class Metadata
     {
+        [JsonProperty("iconUrl")]
+        public Uri IconUrl { get; set; }
     }
 }
