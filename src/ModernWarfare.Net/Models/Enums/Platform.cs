@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
+[assembly: InternalsVisibleTo("ModernWarfare.NetTests")]
 namespace ModernWarfare.Net.Models.Enums
 {
     public enum Platform
