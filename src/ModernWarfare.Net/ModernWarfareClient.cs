@@ -1,41 +1,45 @@
-﻿using System.IO;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using ModernWarfare.Net.Helpers;
 using ModernWarfare.Net.Models.Enums;
-using Newtonsoft.Json;
+using ModernWarfare.Net.Models.Multiplayer;
+using ModernWarfare.Net.Models.Warzone;
 
 namespace ModernWarfare.Net
 {
     public class ModernWarfareClient
     {
-        public async Task<Models.Multiplayer.Stats> GetMultiplayerStatsAsync(Platform platform, string username)
+        private readonly JsonHelper _jsonHelper;
+
+        public ModernWarfareClient()
         {
-            ApiHelper.InitializeClient();
+            _jsonHelper = new JsonHelper();
+        }
+
+        public async Task<MultiplayerStats> GetMultiplayerStatsAsync(Platform platform, string username)
+        {
             string requestUsername = platform.ToValidUsername(username);
             string requestPlatform = platform.ToApiString();
             var jsonAsStream = await ApiProcessor.GetUser($"https://api.tracker.gg/api/v2/modern-warfare/standard/profile/{requestPlatform}/{requestUsername}");
 
-            var streamReader = new StreamReader(jsonAsStream);
-            var jsonTextReader = new JsonTextReader(streamReader);
-            var jsonSerializer = new JsonSerializer();
-            var apiData = jsonSerializer.Deserialize<Models.Multiplayer.ModernWarfareApiOutput>(jsonTextReader);
+            var apiData = await _jsonHelper.Deserialise<MultiplayerApiOutput>(jsonAsStream);
 
             return apiData.Data.Segments[0].Stats;
         }
 
-        public async Task<Models.Warzone.Stats> GetWarzoneStatsAsync(Platform platform, string username)
+        public async Task<WarzoneStatsView> GetWarzoneStatsAsync(Platform platform, string username)
         {
-            ApiHelper.InitializeClient();
             string requestUsername = platform.ToValidUsername(username);
             string requestPlatform = platform.ToApiString();
             var jsonAsStream = await ApiProcessor.GetUser($"https://api.tracker.gg/api/v2/warzone/standard/profile/{requestPlatform}/{requestUsername}");
 
-            var streamReader = new StreamReader(jsonAsStream);
-            var jsonTextReader = new JsonTextReader(streamReader);
-            var jsonSerializer = new JsonSerializer();
-            var apiData = jsonSerializer.Deserialize<Models.Warzone.ModernWarfareApiOutput>(jsonTextReader);
+            var apiData = await _jsonHelper.Deserialise<WarzoneApiOutput>(jsonAsStream);
 
-            return apiData.Data.Segments[0].Stats;
+            var lifetime = apiData.Data.Segments.First(s => s.Metadata.Name == "Lifetime");
+            var battleRoyal = apiData.Data.Segments.First(s => s.Metadata.Name == "Battle Royale");
+            var plunder = apiData.Data.Segments.First(s => s.Metadata.Name == "Plunder");
+
+            return new WarzoneStatsView((LifetimeWarzoneStats)lifetime.Stats, battleRoyal.Stats, plunder.Stats);
         }
     }
 }

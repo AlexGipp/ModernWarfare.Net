@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace ModernWarfare.Net.Models.Multiplayer
 {
-    public class ModernWarfareApiOutput
+    public class MultiplayerApiOutput
     {
         [JsonProperty("data")]
         public Data Data { get; set; }

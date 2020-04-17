@@ -2,7 +2,7 @@
 
 namespace ModernWarfare.Net.Models.Warzone
 {
-    public class ModernWarfareApiOutput
+    public class WarzoneApiOutput
     {
         [JsonProperty("data")]
         public Data Data { get; set; }

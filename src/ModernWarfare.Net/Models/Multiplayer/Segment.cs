@@ -15,6 +15,6 @@ namespace ModernWarfare.Net.Models.Multiplayer
         public DateTimeOffset ExpiryDate { get; set; }
 
         [JsonProperty("stats")]
-        public Stats Stats { get; set; }
+        public MultiplayerStats Stats { get; set; }
     }
 }

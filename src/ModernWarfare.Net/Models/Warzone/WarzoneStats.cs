@@ -2,7 +2,7 @@
 
 namespace ModernWarfare.Net.Models.Warzone
 {
-    public class Stats
+    public class WarzoneStats
     {
         [JsonProperty("kills")]
         public Information Kills { get; set; }

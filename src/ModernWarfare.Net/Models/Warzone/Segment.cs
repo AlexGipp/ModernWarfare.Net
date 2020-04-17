@@ -15,6 +15,6 @@ namespace ModernWarfare.Net.Models.Warzone
         public DateTimeOffset ExpiryDate { get; set; }
 
         [JsonProperty("stats")]
-        public Stats Stats { get; set; }
+        public WarzoneStats Stats { get; set; }
     }
 }
