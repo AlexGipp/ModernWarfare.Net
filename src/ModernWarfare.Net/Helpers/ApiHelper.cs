@@ -3,13 +3,12 @@ using System.Net.Http.Headers;
 
 namespace ModernWarfare.Net.Helpers
 {
-    public class ApiHelper
+    public static class ApiHelper
     {
-        public static HttpClient ApiClient { get; set; }
+        public static HttpClient ApiClient { get; set; } = new HttpClient();
 
-        public static void InitializeClient()
+        static ApiHelper()
         {
-            ApiClient = new HttpClient();
             ApiClient.DefaultRequestHeaders.Accept.Clear();
             ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
