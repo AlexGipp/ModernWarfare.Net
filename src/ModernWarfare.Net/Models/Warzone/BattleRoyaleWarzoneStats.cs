@@ -2,7 +2,7 @@
 
 namespace ModernWarfare.Net.Models.Warzone
 {
-    public class WarzoneStats : BattleRoyaleWarzoneStats
+    public class BattleRoyaleWarzoneStats
     {
         [JsonProperty("kills")]
         public Information Kills { get; set; }
@@ -57,15 +57,5 @@ namespace ModernWarfare.Net.Models.Warzone
 
         [JsonProperty("averageLife")]
         public Information AvarageLife { get; set; }
-
-        [JsonProperty("level")]
-        public Information Level { get; set; }
-
-        [JsonProperty("levelXpTotal")]
-        public Information LevelXpTotal { get; set; }
-
-        [JsonProperty("levelProgression")]
-        public Information LevelProgression { get; set; }
-
     }
 }

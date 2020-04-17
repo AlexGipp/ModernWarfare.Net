@@ -7,9 +7,6 @@ namespace ModernWarfare.Net.Models
 {
     public class Information
     {
-        [JsonProperty("rank")]
-        public object Rank { get; set; }
-
         [JsonProperty("percentile")]
         public double? Percentile { get; set; }
 

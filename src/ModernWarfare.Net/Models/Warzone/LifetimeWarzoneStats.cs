@@ -2,8 +2,8 @@
 {
     public class LifetimeWarzoneStats : WarzoneStats
     {
-        public LevelStats Level { get; set; }
-        public LevelStats LevelXpTotal { get; set; }
-        public LevelStats LevelProgression { get; set; }
+        public Information Level { get; set; }
+        public Information LevelXpTotal { get; set; }
+        public Information LevelProgression { get; set; }
     }
 }

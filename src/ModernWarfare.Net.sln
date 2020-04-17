@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernWarfare.Net", "ModernWarfare.Net\ModernWarfare.Net.csproj", "{916D932E-4A1D-49F9-9CFA-9940E7B43BD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernWarfare.NetTests", "ModernWarfare.NetTests\ModernWarfare.NetTests.csproj", "{652C0F59-E04D-462E-AE25-03EDCBF2129F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernWarfare.NetTests", "ModernWarfare.NetTests\ModernWarfare.NetTests.csproj", "{652C0F59-E04D-462E-AE25-03EDCBF2129F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

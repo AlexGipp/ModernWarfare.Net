@@ -2,7 +2,7 @@
 
 namespace ModernWarfare.Net.Models.Multiplayer
 {
-    public class MultiplayerStats
+    public class MultiplayerStats : AccoladesMultiplayerStats
     {
         [JsonProperty("kDRatio")]
         public Information KDRatio { get; set; }
