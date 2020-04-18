@@ -2,6 +2,9 @@
   <img src="docs/images/logo.png" />
 </p>
 
+
+![Build & Test](https://github.com/AlexGipp/ModernWarfare.Net/workflows/Build%20&%20Test/badge.svg?branch=master)
+
 ## 🤔 How To Use
 
 ### Creating a request to get **Multiplayer** Stats.
