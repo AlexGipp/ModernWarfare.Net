@@ -1,9 +1,10 @@
 <p align="center">
   <img src="docs/images/logo.png" />
+  <a href="https://github.com/AlexGipp/ModernWarfare.Net/actions?query=workflow%3A%22Build+%26+Test%22">
+    <img src="https://github.com/AlexGipp/ModernWarfare.Net/workflows/Build%20&%20Test/badge.svg" alt="Build status">
+  </a>
 </p>
 
-
-![Build & Test](https://github.com/AlexGipp/ModernWarfare.Net/workflows/Build%20&%20Test/badge.svg?branch=master)
 
 ## 🤔 How To Use
 
